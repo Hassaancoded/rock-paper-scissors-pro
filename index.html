@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rock Paper Scissors Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Rock Paper Scissors Pro</h1>
+    <div class="scoreboard">
+      <div>User: <span id="user-score">0</span></div>
+      <div>Computer: <span id="cpu-score">0</span></div>
+    </div>
+    <div class="choices">
+      <button onclick="play(1)" class="choice-btn">🪨 Rock</button>
+      <button onclick="play(2)" class="choice-btn">📄 Paper</button>
+      <button onclick="play(3)" class="choice-btn">✂️ Scissors</button>
+    </div>
+    <div id="result"></div>
+    <div id="game-end"></div>
+    <button id="reset" onclick="resetGame()">🔄 Play Again</button>
+  </div>
+  <script src="confetti.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

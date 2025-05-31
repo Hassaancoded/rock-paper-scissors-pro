@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  /* Changed to a gradient with colors inspired by rock (gray), paper (cream), and scissors (metallic blue) */
+  background: linear-gradient(135deg, #4a4a4a, #f5f5e1, #4682b4);
+  color: #333; /* Darker text for better contrast on lighter elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Prevent scrolling for a focused game experience */
+}
+
+.container {
+  text-align: center;
+  /* Subtle paper texture background for the game container */
+  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png'), #f5f5e1;
+  padding: 40px;
+  border-radius: 15px; /* Slightly softer corners */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Softer, deeper shadow for depth */
+  max-width: 450px; /* Slightly wider for better spacing */
+  width: 95%;
+  border: 2px solid #4682b4; /* Scissors-inspired metallic border */
+}
+
+h1 {
+  margin-bottom: 25px;
+  font-size: 36px;
+  /* Rock-inspired bold color with a slight gradient */
+  background: linear-gradient(to right, #4a4a4a, #6b7280);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px 0;
+  font-size: 22px;
+  background: rgba(0, 0, 0, 0.1); /* Subtle background for contrast */
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #00a491; /* Tie to button hover color */
+}
+
+.choices button {
+  padding: 15px 30px;
+  font-size: 26px;
+  margin: 12px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+  /* Unique styles for each choice */
+}
+.choices button:nth-child(1) {
+  /* Rock: Stone-like texture and color */
+  background: url('https://www.transparenttextures.com/patterns/rocky-wall.png'), #4a4a4a;
+}
+.choices button:nth-child(2) {
+  /* Paper: Light, parchment-like */
+  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png'), #f5f5e1;
+  color: #333; /* Dark text for contrast */
+}
+.choices button:nth-child(3) {
+  /* Scissors: Metallic, sharp look */
+  background: linear-gradient(45deg, #4682b4, #87ceeb);
+}
+
+.choices button:hover {
+  transform: scale(1.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  /* Slightly darker versions of each choice's base color */
+}
+.choices button:nth-child(1):hover {
+  background: url('https://www.transparenttextures.com/patterns/rocky-wall.png'), #3c3c3c;
+}
+.choices button:nth-child(2):hover {
+  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png'), #e6e6d2;
+}
+.choices button:nth-child(3):hover {
+  background: linear-gradient(45deg, #3a6e9a, #73b8d3);
+}
+
+#result {
+  margin-top: 25px;
+  font-size: 24px;
+  min-height: 50px;
+  /* Softer animation for result display */
+  animation: fadeIn 0.4s ease-in-out;
+  background: rgba(255, 255, 255, 0.1); /* Subtle backdrop for readability */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#game-end {
+  font-size: 28px;
+  margin-top: 25px;
+  color: #b22222; /* Red to emphasize game end */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#reset {
+  margin-top: 30px;
+  padding: 12px 25px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  /* Reset button with a bold, game-restart feel */
+  background: linear-gradient(45deg, #b22222, #ff4040);
+  color: white;
+  cursor: pointer;
+  display: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#reset:hover {
+  background: linear-gradient(45deg, #9b1d1d, #e63939);
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
